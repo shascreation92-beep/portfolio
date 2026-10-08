@@ -1,0 +1,30 @@
+# VRankly - Robots Configuration for Search Engines and AI Crawlers
+# https://vrankly.com
+
+User-agent: *
+Allow: /
+Disallow: /#/admin
+
+# Allow AI Search & Answer Engine crawlers for GEO / AEO ranking
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://vrankly.com/sitemap.xml

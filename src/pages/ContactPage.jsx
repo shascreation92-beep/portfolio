@@ -167,12 +167,45 @@ export default function ContactPage() {
                     borderRadius: "12px",
                     padding: "20px",
                     border: "1px solid rgba(255, 255, 255, 0.06)",
-                    marginBottom: "28px"
+                    marginBottom: "24px"
                   }}>
                     <div style={{ fontSize: "0.85rem", color: "var(--text-muted)", marginBottom: "8px", fontWeight: 600 }}>Next Steps:</div>
                     <div style={{ fontSize: "0.9rem", color: "#cbd5e1", marginBottom: "6px" }}>1. Mutual Non-Disclosure Agreement (NDA) if required</div>
-                    <div style={{ fontSize: "0.9rem", color: "#cbd5e1", marginBottom: "6px" }}>2. 20-minute technical scope & architecture discovery call</div>
+                    <div style={{ fontSize: "0.9rem", color: "#cbd5e1", marginBottom: "6px" }}>2. 20-minute technical scope & discovery call</div>
                     <div style={{ fontSize: "0.9rem", color: "#cbd5e1" }}>3. Customized sprint proposal and milestone breakdown</div>
+                  </div>
+
+                  {/* 1-Click Direct Delivery Buttons */}
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", justifyContent: "center", marginBottom: "26px" }}>
+                    <a
+                      href={`mailto:${COMPANY_INFO.email}?subject=${encodeURIComponent(`Project Inquiry: ${formData.service} [${ticketId}]`)}&body=${encodeURIComponent(`Hi VRankly Team,\n\nI just submitted a project inquiry via your website.\n\nName: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || "N/A"}\nService: ${formData.service}\nBudget: ${formData.budget}\n\nProject Scope:\n${formData.message}\n\nTicket Reference: ${ticketId}`)}`}
+                      className="btn-primary"
+                      style={{ padding: "12px 18px", fontSize: "0.88rem", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}
+                    >
+                      <Mail size={16} />
+                      <span>Send via Email Client</span>
+                    </a>
+                    <a
+                      href={`https://wa.me/${(COMPANY_INFO.whatsapp || "").replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Hi VRankly, I just submitted an inquiry [${ticketId}]:\nName: ${formData.name}\nService: ${formData.service}\nBudget: ${formData.budget}\nMessage: ${formData.message}`)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        padding: "12px 18px",
+                        fontSize: "0.88rem",
+                        textDecoration: "none",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "8px",
+                        background: "rgba(16, 185, 129, 0.15)",
+                        border: "1px solid var(--emerald)",
+                        borderRadius: "10px",
+                        color: "var(--emerald)",
+                        fontWeight: 600
+                      }}
+                    >
+                      <MessageSquare size={16} />
+                      <span>Forward to WhatsApp</span>
+                    </a>
                   </div>
 
                   <button
@@ -404,7 +437,15 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <div style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>Executive Email</div>
-                        <div style={{ fontSize: "0.95rem", color: "#fff", fontWeight: 600 }}>{COMPANY_INFO.email}</div>
+                        <a
+                          href={`mailto:${COMPANY_INFO.email}`}
+                          style={{ fontSize: "0.95rem", color: "#fff", fontWeight: 600, textDecoration: "none", transition: "color 0.2s" }}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cyan)")}
+                          onMouseLeave={(e) => (e.currentTarget.style.color = "#fff")}
+                          title="Click to email directly"
+                        >
+                          {COMPANY_INFO.email}
+                        </a>
                       </div>
                     </div>
                     <button
@@ -436,7 +477,15 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>Direct Line</div>
-                      <div style={{ fontSize: "0.95rem", color: "#fff", fontWeight: 600 }}>{COMPANY_INFO.phone}</div>
+                      <a
+                        href={`tel:${(COMPANY_INFO.phone || "").replace(/[^0-9+]/g, "")}`}
+                        style={{ fontSize: "0.95rem", color: "#fff", fontWeight: 600, textDecoration: "none", transition: "color 0.2s" }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cyan)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = "#fff")}
+                        title="Click to call directly"
+                      >
+                        {COMPANY_INFO.phone}
+                      </a>
                     </div>
                   </div>
 
@@ -448,10 +497,12 @@ export default function ContactPage() {
                     <div>
                       <div style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>Instant WhatsApp Chat</div>
                       <a
-                        href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Hi%20VRankly,%20I'd%20like%20to%20discuss%20a%20project`}
+                        href={`https://wa.me/${(COMPANY_INFO.whatsapp || "").replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi VRankly, I'd like to discuss a project")}`}
                         target="_blank"
                         rel="noreferrer"
-                        style={{ fontSize: "0.92rem", color: "var(--emerald)", fontWeight: 600 }}
+                        style={{ fontSize: "0.92rem", color: "var(--emerald)", fontWeight: 600, textDecoration: "none" }}
+                        onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
+                        onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
                       >
                         Start WhatsApp Chat →
                       </a>

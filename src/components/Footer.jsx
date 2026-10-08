@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Cpu, ArrowRight, CheckCircle2, Lock } from "lucide-react";
+import { Cpu, ArrowRight, CheckCircle2, Lock, Mail, MessageSquare } from "lucide-react";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
 import { usePortfolio } from "../context/PortfolioContext";
 import confetti from "canvas-confetti";
@@ -65,9 +65,56 @@ export default function Footer() {
               </span>
             </div>
 
-            <p style={{ fontSize: "0.92rem", color: "var(--text-secondary)", lineHeight: 1.7, marginBottom: "20px" }}>
+            <p style={{ fontSize: "0.92rem", color: "var(--text-secondary)", lineHeight: 1.7, marginBottom: "16px" }}>
               Led by CEO {companyInfo?.ceo || "Faizan Cheena"}, {companyInfo?.name || "VRankly"}'s specialized agency guild delivers premier SEO/AEO/GEO ranking dominance, Google & Meta Ads, AI automations, and 24/7 business operations.
             </p>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "20px" }}>
+              <a
+                href={`mailto:${companyInfo?.email || "contact@vrankly.com"}`}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  fontSize: "0.8rem",
+                  color: "#cbd5e1",
+                  background: "rgba(255, 255, 255, 0.04)",
+                  border: "1px solid rgba(255, 255, 255, 0.08)",
+                  padding: "6px 12px",
+                  borderRadius: "8px",
+                  textDecoration: "none",
+                  transition: "all 0.2s"
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--cyan)")}
+                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.08)")}
+                title="Send email directly"
+              >
+                <Mail size={13} color="var(--cyan)" />
+                <span>{companyInfo?.email || "contact@vrankly.com"}</span>
+              </a>
+              <a
+                href={`https://wa.me/${(companyInfo?.whatsapp || "+923000000000").replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi VRankly, I'd like to discuss a project")}`}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  fontSize: "0.8rem",
+                  color: "var(--emerald)",
+                  background: "rgba(16, 185, 129, 0.08)",
+                  border: "1px solid rgba(16, 185, 129, 0.25)",
+                  padding: "6px 12px",
+                  borderRadius: "8px",
+                  textDecoration: "none",
+                  transition: "all 0.2s"
+                }}
+                title="Chat on WhatsApp"
+              >
+                <MessageSquare size={13} />
+                <span>WhatsApp</span>
+              </a>
+            </div>
 
 
           </div>
