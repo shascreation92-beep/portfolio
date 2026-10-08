@@ -1,6 +1,7 @@
-# NEXUS LABS — High-Performance Multi-Page Portfolio Website
+# VRANKLY — High-Performance Digital Agency & Portfolio Website
+**CEO & Founder: Faizan Cheena**
 
-A futuristic, dynamic, glassmorphic portfolio web application tailored for a high-end Tech Agency / Software House.
+An elite, high-performance web application showcasing VRankly's full-spectrum digital agency capabilities: SEO/AEO/GEO ranking dominance, Google & Meta Ads, AI Automations, and 24/7 business operations.
 
 ---
 
