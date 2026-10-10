@@ -218,6 +218,82 @@ export const PROJECTS = [
     challenge: "High costs of physical on-site guards and delayed customer phone support during peak freight dispatch hours.",
     solution: "Deployed a dedicated 24/7 remote camera surveillance monitoring squad with instant incident logging, complemented by a trained inbound calling team.",
     results: "Saved the client over $90,000 annually compared to physical security, achieved zero facility theft incidents, and maintained a 99.2% call answer rate."
+  },
+  {
+    id: "quantum-ai-analytics",
+    title: "Quantum AI — Predictive Analytics & LLM Automation Engine",
+    category: "Web & AI",
+    tagline: "Custom generative AI engine analyzing 10M+ data points daily with real-time insight generation.",
+    image: "/images/project-ai.jpg",
+    metrics: [
+      { label: "Data Throughput", value: "10M+ / day" },
+      { label: "Inference Latency", value: "< 120ms" },
+      { label: "Accuracy Score", value: "99.4%" }
+    ],
+    tags: ["AI & ML", "LLM Fine-Tuning", "Python", "Data Pipeline", "FastAPI"],
+    client: "Quantum AI Labs",
+    year: "2024",
+    overview: "An enterprise intelligence provider needed a scalable AI pipeline to extract structured intelligence from continuous multi-source data streams.",
+    challenge: "Handling complex unstructured text without latency bottlenecks or hallucinations.",
+    solution: "Architected a custom vector retrieval pipeline with fine-tuned open-source LLMs and high-concurrency caching.",
+    results: "Reduced data analysis cycle time by 85% and powered automated executive decision dashboards."
+  },
+  {
+    id: "prime-fintech-mobile",
+    title: "Prime Financials — Cross-Border Fintech & Mobile Banking",
+    category: "Web & AI",
+    tagline: "Next-gen banking interface with biometric authentication and sub-second remittances.",
+    image: "/images/project-fintech.jpg",
+    metrics: [
+      { label: "Active Mobile Users", value: "250K+" },
+      { label: "Transaction Speed", value: "0.6s" },
+      { label: "App Store Rating", value: "4.9 / 5" }
+    ],
+    tags: ["Fintech", "Mobile App", "React Native", "Payment Gateway", "PCI-DSS"],
+    client: "Prime Financial Group",
+    year: "2024",
+    overview: "A neo-bank targeting global digital nomads needed an ultra-fluid mobile banking interface with bank-grade security.",
+    challenge: "Strict compliance, complex cross-currency remittance protocols, and high mobile UI responsiveness requirements.",
+    solution: "Engineered a high-performance cross-platform application with biometric auth, real-time FX rate updates, and zero-latency transaction ledgers.",
+    results: "Scaled to 250,000 active monthly transacting users with zero security incidents."
+  },
+  {
+    id: "zenith-cloud-devops",
+    title: "Zenith Cloud — Multi-Region Cloud & Kubernetes DevOps",
+    category: "Operations",
+    tagline: "Fault-tolerant multi-cloud infrastructure supporting 99.999% uptime for enterprise workloads.",
+    image: "/images/project-cloud.jpg",
+    metrics: [
+      { label: "Infrastructure Uptime", value: "99.999%" },
+      { label: "Deployment Frequency", value: "15x / day" },
+      { label: "Cloud Cost Saved", value: "-38%" }
+    ],
+    tags: ["Cloud & DevOps", "Kubernetes", "AWS / GCP", "Terraform", "CI/CD"],
+    client: "Zenith Cloud Network",
+    year: "2024",
+    overview: "A SaaS provider facing global traffic spikes experienced database lockouts and unpredictable AWS infrastructure bills.",
+    challenge: "Legacy single-region architecture prone to outages during major regional network degradations.",
+    solution: "Migrated workloads to automated multi-region Kubernetes clusters with auto-healing and automated cost optimization policies.",
+    results: "Achieved flawless 99.999% uptime through peak sales quarters while lowering monthly cloud expenses by 38%."
+  },
+  {
+    id: "luxe-healthtech-ai",
+    title: "Luxe Health — AI Clinical Diagnostics & Telehealth Portal",
+    category: "SEO & AEO",
+    tagline: "HIPAA-compliant diagnostic dashboard with medical computer vision analysis.",
+    image: "/images/project-health.jpg",
+    metrics: [
+      { label: "Diagnostic Speed", value: "+300%" },
+      { label: "Patient Adoption", value: "92%" },
+      { label: "HIPAA Compliance", value: "100%" }
+    ],
+    tags: ["HealthTech", "AI Vision", "HIPAA", "Telehealth", "SEO"],
+    client: "Luxe Health Systems",
+    year: "2025",
+    overview: "A specialized clinical healthcare consortium required a fast, secure portal for diagnostic analysis and remote patient booking.",
+    challenge: "Strict regulatory data privacy hurdles and high image processing requirements for clinical scans.",
+    solution: "Deployed an end-to-end encrypted portal with edge-accelerated diagnostic imaging support and high-ranking local SEO search presence.",
+    results: "Tripled clinical triage throughput and earned #1 regional Google search rankings across 45 medical specialties."
   }
 ];
 

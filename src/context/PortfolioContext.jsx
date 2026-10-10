@@ -171,6 +171,27 @@ export function PortfolioProvider({ children }) {
         if (missingDefaults.length > 0) {
           teamList = [...teamList, ...missingDefaults];
         }
+        teamList = teamList.map((m) => {
+          const def = DEFAULT_TEAM_MEMBERS.find((d) => d.id === m.id);
+          return {
+            ...m,
+            image: m.image || (def ? def.image : "/images/faizan-cheena.jpg")
+          };
+        });
+
+        let projectList = parsed.projects || DEFAULT_PROJECTS;
+        const currentProjIds = new Set(projectList.map((p) => p.id));
+        const missingDefaultProjects = DEFAULT_PROJECTS.filter((p) => !currentProjIds.has(p.id));
+        if (missingDefaultProjects.length > 0) {
+          projectList = [...projectList, ...missingDefaultProjects];
+        }
+        projectList = projectList.map((p, idx) => {
+          const def = DEFAULT_PROJECTS.find((d) => d.id === p.id) || DEFAULT_PROJECTS[idx];
+          return {
+            ...p,
+            image: p.image || (def ? def.image : "/images/project-seo-aeo.jpg")
+          };
+        });
 
         let testList = parsed.testimonials || DEFAULT_TESTIMONIALS;
         const hasOliver = testList.some((t) => t.author?.includes("Oliver"));
@@ -193,7 +214,7 @@ export function PortfolioProvider({ children }) {
           companyInfo: { ...DEFAULT_COMPANY_INFO, ...(parsed.companyInfo || {}) },
           teamMembers: teamList,
           services: parsed.services || DEFAULT_SERVICES,
-          projects: parsed.projects || DEFAULT_PROJECTS,
+          projects: projectList,
           testimonials: testList,
           videoReviews: videoReviewsList,
           faqs: parsed.faqs || DEFAULT_FAQS,
